@@ -1,0 +1,72 @@
+// Variables
+$primary-color: #ff0099;
+$secondary-color: #ff3399;
+$button-blue: #0000ff;
+$button-green: #00ff00;
+$button-red: #ff0000;
+
+// Mixin pour les boutons
+@mixin button($color) {
+  background-color: $color;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+// Styles pour la navigation
+nav {
+  background-color: black;
+  overflow: hidden;
+  a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    &:hover {
+      background-color: $secondary-color;
+      color: black;
+    }
+  }
+}
+
+// Styles pour l'en-tête
+header {
+  text-align: center;
+  h1 {
+    color: $primary-color;
+  }
+  p {
+    color: grey;
+  }
+}
+
+// Styles pour les boutons
+.button {
+  &-register {
+    @include button($button-blue);
+  }
+  &-validate {
+    @include button($button-green);
+  }
+  &-quit {
+    @include button($button-red);
+  }
+}
+
+// Footer
+footer {
+  text-align: center;
+  margin-top: 20px;
+  p {
+    color: grey;
+  }
+}
